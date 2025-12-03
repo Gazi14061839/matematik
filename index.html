@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Neden Asal Değil? | Mustafa Gazi</title>
+    <style>
+        :root {
+            --primary: #FFD700; /* Altın Sarısı */
+            --bg: #0f172a; /* Koyu Lacivert */
+            --card-bg: #1e293b; /* Kart Rengi */
+            --text: #e2e8f0; /* Açık Gri */
+            --accent: #38bdf8; /* Mavi */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            flex: 1; /* Footer'ı aşağı itmek için */
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        h2 {
+            color: var(--accent);
+            border-bottom: 2px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Math Box */
+        .math-box {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Interactive Tool Section */
+        .checker-section {
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px dashed var(--primary);
+            margin-top: 3rem;
+        }
+
+        input[type="number"] {
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: none;
+            width: 200px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #e6c200;
+        }
+
+        #result {
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            min-height: 50px;
+        }
+
+        .valid { color: #4ade80; } /* Yeşil */
+        .invalid { color: #f87171; } /* Kırmızı */
+        .special { color: var(--primary); } /* Sarı */
+
+        /* Footer Kısmı - Senin Bilgilerin */
+        footer {
+            background-color: #020617;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #334155;
+            margin-top: auto;
+        }
+        
+        footer p {
+            margin: 5px 0;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>1 Neden Asal Değil?</h1>
+        <p class="subtitle">Matematik dünyasının en çok merak edilen sorusunun cevabı, teoremler ve kanıtlar.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>⚡ Kısa Cevap</h2>
+            <p>Bir sayının asal olması için <strong>tam olarak iki farklı pozitif böleni</strong> (1 ve kendisi) olması gerekir.</p>
+            <p>1 sayısının ise sadece <strong>bir tane</strong> böleni vardır (o da 1'dir). Bu yüzden asal sayı tanımına uymaz.</p>
+        </div>
+
+        <div class="card">
+            <h2>1. Kanıt: Tanım Yasası</h2>
+            <p>Matematiksel tanım kesindir. Bölen sayılarına bakalım:</p>
+            <ul>
+                <li><strong>7 Sayısı:</strong> Bölenleri {1, 7} → 2 Adet → <span class="valid">ASAL</span></li>
+                <li><strong>13 Sayısı:</strong> Bölenleri {1, 13} → 2 Adet → <span class="valid">ASAL</span></li>
+                <li><strong>1 Sayısı:</strong> Bölenleri {1} → 1 Adet → <span class="invalid">ASAL DEĞİL</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>2. Kanıt: Aritmetiğin Temel Teoremi</h2>
+            <p>Bu teorem der ki: <em>"Her sayı asal çarpanlarına <strong>tek bir şekilde</strong> ayrılabilir."</em></p>
+            <p>Eğer 1 asal olsaydı, bu düzen bozulurdu. Örnek olarak 6 sayısına bakalım:</p>
+            
+            <div class="math-box">
+                Gerçek Durum:<br>
+                6 = 2 × 3 (Tek bir yol var)<br><br>
+                Eğer 1 Asal Olsaydı:<br>
+                6 = 1 × 2 × 3<br>
+                6 = 1 × 1 × 2 × 3<br>
+                6 = 1 × 1 × 1 × 2 × 3... (Sonsuz yol olurdu!)
+            </div>
+            <p>Matematikteki bu kaosun önlenmesi için 1 asal kabul edilmez.</p>
+        </div>
+
+        <div class="card">
+            <h2>3. Kanıt: Aralarında Asallık Yanılgısı</h2>
+            <p>Birçok kişi, "1 tüm sayılarla aralarında asaldır, o halde özeldir" diye düşünür.</p>
+            <p>Evet, 1 tüm sayılarla aralarında asaldır. Ancak matematikte 1, "Asal Sayı" değil, <strong>"Birim" (Unit)</strong> olarak sınıflandırılır.</p>
+        </div>
+
+        <div class="checker-section">
+            <h2>🧮 Sayı Kontrol Aracı</h2>
+            <p>Bir sayı girin, neden asal olup olmadığını söyleyelim.</p>
+            <input type="number" id="numberInput" placeholder="Bir sayı girin..." min="0">
+            <br>
+            <button onclick="checkPrime()">Kontrol Et</button>
+            <div id="result"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><strong>Mustafa Gazi</strong> - 10/A</p>
+        <p>Şehit Abdullah Tayyip Olçok Anadolu Lisesi</p>
+        <p>2025 © Matematik</p>
+    </footer>
+
+    <script>
+        function checkPrime() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            const resultDiv = document.getElementById('result');
+            
+            resultDiv.innerHTML = "";
+            resultDiv.className = "";
+
+            if (isNaN(num)) {
+                resultDiv.innerText = "Lütfen geçerli bir sayı girin.";
+                return;
+            }
+
+            if (num === 1) {
+                resultDiv.innerHTML = "❌ 1 Sayısı ASAL DEĞİLDİR.<br><small>Sebep: Sadece 1 tane böleni vardır. Asal olması için 2 bölen gerekir.</small>";
+                resultDiv.className = "special";
+                return;
+            }
+
+            if (num < 1) {
+                resultDiv.innerHTML = "Lütfen pozitif bir tam sayı girin.";
+                return;
+            }
+
+            let isPrime = true;
+            if (num > 1) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            } else {
+                isPrime = false;
+            }
+
+            if (isPrime) {
+                resultDiv.innerHTML = "✅ " + num + " bir ASAL SAYIDIR.";
+                resultDiv.className = "valid";
+            } else {
+                resultDiv.innerHTML = "⛔ " + num + " bir ASAL SAYI DEĞİLDİR (Bileşik Sayıdır).";
+                resultDiv.className = "invalid";
+            }
+        }
+    </script>
+
+</body>
+</html>
