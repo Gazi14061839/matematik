@@ -7,15 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); /* Derin Mor/Lacivert Arka Plan */
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             --card-bg: #1e293b;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
-            --accent-purple: #a855f7; 
-            --accent-pink: #ec4899; 
-            --accent-orange: #f97316; 
-            --success: #22c55e; 
-            --danger: #ef4444; 
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-orange: #f97316;
+            --success: #22c55e;
+            --danger: #ef4444;
         }
 
         body {
@@ -88,7 +88,7 @@
             margin-top: 1.5rem;
             font-size: 1.3rem;
         }
-        
+
         .content-card h3:first-child { margin-top: 0; }
 
         .math-box {
@@ -145,7 +145,7 @@
             font-family: 'Poppins', sans-serif;
             transition: 0.3s;
         }
-        
+
         input[type="number"]:focus {
             outline: none;
             border-color: var(--accent-purple);
@@ -236,41 +236,69 @@
 </head>
 <body>
 
-    <header>
-        <h1>1 Neden Asal Değil?</h1>
-        <p class="subtitle">10. Sınıf Asal Sayılar</p>
-    </header>
+<header>
+    <h1>1 Neden Asal Değil?</h1>
+    <p class="subtitle">10. Sınıf Asal Sayılar</p>
+</header>
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
-            <span>📖</span> Konu Detayları ve İspatlar
+    <div class="section-title">
+        <span>📖</span> Konu Detayları ve İspatlar
+    </div>
+    <div class="content-card">
+
+        <h3>1. Tanım Yasası (İki Bölen Kuralı)</h3>
+        <p>Matematikte asal sayı tanımı çok kesindir: <strong>\"Bir sayının asal olabilmesi için tam olarak iki farklı pozitif tam sayı böleni olmalıdır (1 ve kendisi).\"</strong></p>
+        <ul>
+            <li><strong>7 Sayısı:</strong> Bölenleri {1, 7} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
+            <li><strong>13 Sayısı:</strong> Bölenleri {1, 13} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
+            <li><strong>1 Sayısı:</strong> Bölenleri {1} → Sadece 1 Adet → <span style="color:var(--danger)">ASAL DEĞİL</span></li>
+        </ul>
+
+        <h3>2. Aritmetiğin Temel Teoremi (Çarpanların Tekliği)</h3>
+        <p>Bu teorem der ki: <em>\"Her pozitif tam sayı, asal çarpanlarına <strong>tek bir şekilde</strong> ayrılabilir.\"</em></p>
+
+        <div class="math-box">
+            <strong>Örnek: 12 Sayısı</strong><br><br>
+            Gerçek Durum:<br>
+            12 = 2² × 3¹<br><br>
+            <strong>Eğer 1 Asal Olsaydı:</strong><br>
+            12 = 1 × 2² × 3¹<br>
+            12 = 1¹⁰ × 2² × 3¹<br>
+            12 = 1¹⁰⁰ × 2² × 3¹...<br><br>
+            Çarpanlara ayırmanın \"tekliği\" bozulurdu.
         </div>
-        <div class="content-card">
-            <h3>1. Tanım Yasası (İki Bölen Kuralı)</h3>
-            <p>Matematikte asal sayı tanımı çok kesindir: <strong>"Bir sayının asal olabilmesi için tam olarak iki farklı pozitif tam sayı böleni olmalıdır (1 ve kendisi)."</strong></p>
-            <ul>
-                <li><strong>7 Sayısı:</strong> Bölenleri {1, 7} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
-                <li><strong>13 Sayısı:</strong> Bölenleri {1, 13} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
-                <li><strong>1 Sayısı:</strong> Bölenleri {1} → Sadece 1 Adet → <span style="color:var(--danger)">ASAL DEĞİL</span></li>
-            </ul>
 
-            <h3>2. Aritmetiğin Temel Teoremi (Çarpanların Tekliği)</h3>
-            <p>Bu teorem, matematiğin yapı taşıdır. Der ki: <em>"Her pozitif tam sayı, asal çarpanlarına <strong>tek bir şekilde (benzersiz)</strong> ayrılabilir."</em></p>
-            <div class="math-box">
-                <strong>Örnek: 12 Sayısı</strong><br><br>
-                Gerçek Durum:<br>
-                12 = 2² × 3¹ (Sadece bir tek gösterim vardır)<br><br>
-                <strong>Eğer 1 Asal Olsaydı:</strong><br>
-                12 = 1 × 2² × 3¹<br>
-                12 = 1² × 2² × 3¹<br>
-                12 = 1¹⁰⁰ × 2² × 3¹...<br><br>
-                Çarpanlara ayırmanın "tekliği" bozulurdu ve matematikte kaos oluşurdu.
-            </div>
+        <h3>3. Eratosthenes Kalburu (Eleme Yöntemi)</h3>
+        <p>Asal sayıları bulmak için kullanılan temel yöntemlerden biridir. Mantığı basittir: <strong>Bir asal sayıyı seç ve onun tüm katlarını ele.</strong> Sonunda geriye kalan tüm sayılar asaldır.</p>
 
-            <h3>3. Eratosthenes Kalburu (Eleme Yöntemi)</h3>
-            <p>Asal sayıları bulmak için kullanılan bu yöntemde, bir asal sayı seçilir ve katları elenir. Eğer 1 asal kabul edilseydi, 1'in katları (yani tüm sayılar) elenecekti ve geriye hiçbir sayı kalmayacaktı.</p>
+        <h3>📝 Yöntemin Adımları (n = 30)</h3>
+        <ol>
+            <li><strong>2’den 30’a kadar sayıları yaz.</strong></li>
+            <li><strong>2’yi işaretle ve katlarını ele:</strong> 4, 6, 8, 10...</li>
+            <li><strong>3’ü işaretle ve katlarını ele:</strong> 9, 15, 21, 27...</li>
+            <li><strong>5’i işaretle ve katlarını ele:</strong> 25</li>
+            <li><strong>7’yi işaretle.</strong> 7’nin karesi 49 olduğu için işlem durur.</li>
+        </ol>
+
+        <h3>🎯 Sonuç</h3>
+        <div class="math-box">
+            30’a kadar olan asal sayılar:  
+            <strong>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</strong>
         </div>
+
+        <h3>📌 Neden Yalnızca √n'e Kadar Elemek Yeterli?</h3>
+        <p>Bir sayı asal değilse mutlaka <strong>√n’den küçük bir çarpanı vardır.</strong>  
+        Bu yüzden √n’e kadar olan asal sayıların katlarını elemek yeterlidir.</p>
+
+        <div class="math-box">
+            Örneğin n = 30 → √30 ≈ 5.47  
+            Yani sadece 2, 3 ve 5’in katlarını elemek yeterlidir.
+        </div>
+
+    </div>
+
 
         <div class="tool-wrapper">
             <div class="tool-header">
