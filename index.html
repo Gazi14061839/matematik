@@ -3,362 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10. Sınıf Matematik</title>
+    <title>1 Neden Asal Değil?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FFD700; 
-            --bg: #0f172a; 
-            --card-bg: #1e293b; 
-            --text: #e2e8f0; 
-            --accent: #38bdf8; 
-            --nav-bg: #1c2b45; 
-            --section-bg: #27344b; 
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); /* Derin Mor/Lacivert Arka Plan */
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-purple: #a855f7; 
+            --accent-pink: #ec4899; 
+            --accent-orange: #f97316; 
+            --success: #22c55e; 
+            --danger: #ef4444; 
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            scroll-behavior: smooth;
-        }
-
-        nav {
-            background-color: var(--nav-bg);
-            padding: 0.7rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1rem;
-        }
-
-        .logo {
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            background-color: #334155;
-            color: var(--primary);
         }
 
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
-            padding: 4rem 1rem 2rem;
+            background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%);
+            padding: 4rem 1rem;
             text-align: center;
-            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         h1 {
             font-size: 3rem;
             margin: 0;
-            color: var(--primary);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .subtitle {
             font-size: 1.2rem;
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 1rem auto;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem 1rem;
-            flex: 1; 
+            padding: 3rem 1.5rem;
+            flex: 1;
         }
 
-        .theme-header {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.5rem;
-        }
-
-        .topic-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .topic-card {
-            background-color: var(--section-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
-            border-left: 5px solid var(--accent);
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-            background-color: #334155;
-            border-left-color: var(--primary);
-        }
-
-        .topic-card h3 {
-            color: var(--text);
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-        }
-        
-        #content-area {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 3rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.6);
-            min-height: 400px;
-        }
-
-        #content-area h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-        }
-        
-        .placeholder {
-            text-align: center;
-            opacity: 0.6;
-            margin-top: 100px;
+        .section-title {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+            padding: 1rem 1.5rem;
+            border-radius: 12px 12px 0 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .content-card {
-            background-color: #2e3b52;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            background-color: var(--card-bg);
+            border-radius: 0 0 12px 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
+        .content-card h3 {
+            color: var(--accent-purple);
+            border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+            padding-bottom: 10px;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .content-card h3:first-child { margin-top: 0; }
+
         .math-box {
-            background-color: #000;
-            color: #00ff00;
+            background-color: #0f172a;
+            border-left: 4px solid var(--accent-pink);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             font-family: 'Courier New', Courier, monospace;
-            padding: 1rem;
+            color: #e2e8f0;
             border-radius: 6px;
-            margin: 1rem 0;
-            border-left: 4px solid var(--primary);
-            overflow-x: auto;
         }
-        
-        .table-style {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
+
+        .tool-wrapper {
+            margin-top: 2rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
         }
-        .table-style th, .table-style td {
-            border: 1px solid #4a5568;
-            padding: 10px;
-            text-align: center;
+
+        .tool-header {
+            background: linear-gradient(90deg, #ea580c 0%, #c2410c 100%);
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .table-style th {
-            background-color: #334155;
-            color: var(--primary);
-        }
-        
-        .checker-section {
-            background: linear-gradient(45deg, #1e293b, #0f172a);
-            text-align: center;
+
+        .tool-body {
+            background-color: var(--card-bg);
             padding: 3rem;
-            border-radius: 20px;
-            border: 2px dashed var(--primary);
-            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         input[type="number"] {
             padding: 15px;
             font-size: 1.2rem;
             border-radius: 8px;
-            border: none;
-            width: 200px;
+            border: 2px solid #334155;
+            background-color: #0f172a;
+            color: white;
+            width: 220px;
             text-align: center;
-            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.3s;
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--accent-purple);
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            background-color: var(--primary);
-            color: #000;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
         }
 
         button:hover {
-            background-color: #e6c200;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.6);
         }
 
-        #result {
-            margin-top: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: bold;
-            min-height: 50px;
+        #result-box {
+            display: none;
+            margin-top: 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
         }
-        
-        #factor-result {
-            margin-top: 1rem;
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-family: 'Courier New', Courier, monospace;
-            background-color: rgba(0,0,0,0.3);
-            padding: 10px;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-header {
+            padding: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .result-content {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .data-item {
+            background-color: rgba(255,255,255,0.05);
+            padding: 15px;
             border-radius: 8px;
-            display: inline-block;
+            margin-bottom: 10px;
         }
 
-        .valid { color: #4ade80; } 
-        .invalid { color: #f87171; } 
-        .special { color: var(--primary); } 
+        .data-label {
+            color: var(--accent-purple);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .data-value {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+        }
 
         footer {
             background-color: #020617;
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid #334155;
             margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
-        
+
         footer p {
+            color: var(--text-secondary);
             margin: 5px 0;
-            color: #94a3b8;
-            font-size: 0.95rem;
         }
 
-        footer strong {
-            color: var(--primary);
-        }
+        footer strong { color: var(--accent-purple); }
 
-        @media (max-width: 650px) {
-            h1 { font-size: 2rem; }
-            .topic-card { padding: 1rem; }
-            .nav-container { flex-direction: column; }
-            .nav-links { flex-direction: column; gap: 5px; }
-            nav a { margin: 0.2rem 0; display: block; text-align: center; }
-        }
     </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <span class="logo">10. Sınıf Matematik</span>
-            <div class="nav-links">
-                <a href="#tema1">Geometri</a>
-                <a href="#tema2">İstatistik</a>
-                <a href="#tema3">Sayılar</a>
-                <a href="#icerik-alani">Konu Detayı</a>
-            </div>
-        </div>
-    </nav>
-
     <header>
-        <h1>Şehit Abdullah Tayyip Olçok A.L.</h1>
-        <p class="subtitle">10. Sınıf Matematik</p>
+        <h1>1 Neden Asal Değil?</h1>
+        <p class="subtitle">10. Sınıf Asal Sayılar</p>
     </header>
 
     <div class="container">
-        
-        <h1 class="theme-header" id="tema1">📐 1. Tema: GEOMETRİK ŞEKİLLER</h1>
-        <div class="topic-container">
-            <div class="topic-card" onclick="loadContent('1.1')">
-                <h3>1.1 DİK ÜÇGENDE TRİGONOMETRİK ORANLAR</h3>
+
+        <div class="section-title">
+            <span>📖</span> Konu Detayları ve İspatlar
+        </div>
+        <div class="content-card">
+            <h3>1. Tanım Yasası (İki Bölen Kuralı)</h3>
+            <p>Matematikte asal sayı tanımı çok kesindir: <strong>"Bir sayının asal olabilmesi için tam olarak iki farklı pozitif tam sayı böleni olmalıdır (1 ve kendisi)."</strong></p>
+            <ul>
+                <li><strong>7 Sayısı:</strong> Bölenleri {1, 7} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
+                <li><strong>13 Sayısı:</strong> Bölenleri {1, 13} → 2 Adet → <span style="color:var(--success)">ASAL</span></li>
+                <li><strong>1 Sayısı:</strong> Bölenleri {1} → Sadece 1 Adet → <span style="color:var(--danger)">ASAL DEĞİL</span></li>
+            </ul>
+
+            <h3>2. Aritmetiğin Temel Teoremi (Çarpanların Tekliği)</h3>
+            <p>Bu teorem, matematiğin yapı taşıdır. Der ki: <em>"Her pozitif tam sayı, asal çarpanlarına <strong>tek bir şekilde (benzersiz)</strong> ayrılabilir."</em></p>
+            <div class="math-box">
+                <strong>Örnek: 12 Sayısı</strong><br><br>
+                Gerçek Durum:<br>
+                12 = 2² × 3¹ (Sadece bir tek gösterim vardır)<br><br>
+                <strong>Eğer 1 Asal Olsaydı:</strong><br>
+                12 = 1 × 2² × 3¹<br>
+                12 = 1² × 2² × 3¹<br>
+                12 = 1¹⁰⁰ × 2² × 3¹...<br><br>
+                Çarpanlara ayırmanın "tekliği" bozulurdu ve matematikte kaos oluşurdu.
             </div>
-            <div class="topic-card" onclick="loadContent('1.2')">
-                <h3>1.2 ÜÇGENDE YARDIMCI ELEMANLAR</h3>
-            </div>
-            <div class="topic-card" onclick="loadContent('1.3')">
-                <h3>1.3 ÜÇGENDE ALAN</h3>
-            </div>
-            <div class="topic-card" onclick="loadContent('1.4')">
-                <h3>1.4 SİNÜS VE KOSİNÜS TEOREMLERİ</h3>
-            </div>
+
+            <h3>3. Eratosthenes Kalburu (Eleme Yöntemi)</h3>
+            <p>Asal sayıları bulmak için kullanılan bu yöntemde, bir asal sayı seçilir ve katları elenir. Eğer 1 asal kabul edilseydi, 1'in katları (yani tüm sayılar) elenecekti ve geriye hiçbir sayı kalmayacaktı.</p>
         </div>
 
-        <h1 class="theme-header" id="tema2">📊 2. Tema: İSTATİSTİKSEL ARAŞTIRMA SÜRECİ</h1>
-        <div class="topic-container">
-            <div class="topic-card" onclick="loadContent('2.1')">
-                <h3>2.1 İKİ KATEGORİK DEĞİŞKEN</h3>
+        <div class="tool-wrapper">
+            <div class="tool-header">
+                <span>🚀</span> İnteraktif Araç: Asal Sayı Kontrolcüsü
             </div>
-            <div class="topic-card" onclick="loadContent('2.2')">
-                <h3>2.2 VERİ ANALİZİ VE YORUMLAMA</h3>
-            </div>
-        </div>
-
-        <h1 class="theme-header" id="tema3">🔢 3. Tema: SAYILAR</h1>
-        <div class="topic-container">
-            <div class="topic-card" onclick="loadContent('3.1')">
-                <h3>3.1 ASAL SAYILAR VE ÇARPANLAR</h3>
-            </div>
-            <div class="topic-card" onclick="loadContent('3.2')">
-                <h3>3.2 EBOB - EKOK</h3>
-            </div>
-            <div class="topic-card" onclick="loadContent('3.3')">
-                <h3>3.3 BÖLÜNEBİLME KURALLARI</h3>
-            </div>
-        </div>
-        
-        <div id="content-area">
-            <h1 class="theme-header" id="icerik-alani">Konu Anlatımı Detay</h1>
-            
-            <div id="topic-detail">
-                <div class="placeholder">
-                    <p>Lütfen yukarıdaki konulardan birine tıklayarak detaylı anlatımı görüntüleyin.</p>
-                    <p>3.1 Konusunda, "1 Neden Asal Değil?" detaylıca anlatılmıştır.</p>
+            <div class="tool-body">
+                <p style="margin-bottom: 2rem;">Bir sayı girin ve asal olup olmadığını öğrenin! Ayrıca sayının bölenlerini ve asal çarpanlarını üslü olarak görün.</p>
+                
+                <div class="input-group">
+                    <input type="number" id="numInput" placeholder="Sayı girin (Örn: 25)" min="0">
+                    <button onclick="analyzeNumber()">Kontrol Et</button>
                 </div>
-            </div>
 
-            <div id="asal-checker" style="margin-top: 50px; padding-top: 20px; border-top: 1px dashed var(--card-bg);">
-                <div class="checker-section">
-                    <h2>🧮 Gelişmiş Sayı Analiz Aracı</h2>
-                    <p>Bir sayı girin; hem asal olup olmadığını öğrenin hem de asal çarpanlarına ayırın.</p>
-                    
-                    <input type="number" id="numberInput" placeholder="Bir sayı girin..." min="0">
-                    <br>
-                    <button onclick="analyzeNumber()">ANALİZ ET</button>
-                    
-                    <div id="result"></div>
-                    <div id="factor-result"></div> </div>
+                <div id="result-box">
+                    </div>
             </div>
-
         </div>
 
     </div>
@@ -370,251 +298,96 @@
     </footer>
 
     <script>
-        function loadContent(topicId) {
-            const detailArea = document.getElementById('topic-detail');
-            let content = '';
-            
-            switch(topicId) {
-                case '1.1':
-                    content = `
-                        <h2>1.1 DİK ÜÇGENDE TRİGONOMETRİK ORANLAR</h2>
-                        <div class="content-card">
-                            
-
-
-                            <h3>Temel Oranlar</h3>
-                            <p>Bir dik üçgende dar açının trigonometrik oranları kenar uzunlukları ile belirlenir:</p>
-                            <ul>
-                                <li><strong>Sinüs (sin):</strong> Karşı / Hipotenüs</li>
-                                <li><strong>Kosinüs (cos):</strong> Komşu / Hipotenüs</li>
-                                <li><strong>Tanjant (tan):</strong> Karşı / Komşu</li>
-                                <li><strong>Kotanjant (cot):</strong> Komşu / Karşı</li>
-                            </ul>
-                            <p class="math-box">Özdeşlikler: <br> sin²x + cos²x = 1 <br> tan(x) . cot(x) = 1</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Birim Çember</h3>
-                            <p>Merkezi orijin (0,0) ve yarıçapı 1 birim olan çembere birim çember denir. Herhangi bir açının bitim kenarının çemberi kestiği noktanın apsisi o açının kosinüsü, ordinatı ise sinüsüdür.</p>
-                        </div>
-                    `;
-                    break;
-                case '1.2':
-                    content = `
-                        <h2>1.2 ÜÇGENDE YARDIMCI ELEMANLAR</h2>
-                        <div class="content-card">
-                             
-
-
-                            <h3>1. Açıortay</h3>
-                            <p>Bir açıyı iki eş parçaya bölen ışına açıortay denir. Üçgenin iç açıortayları tek bir noktada kesişir (İç Teğet Çemberin Merkezi).</p>
-                            
-                            <h3>2. Kenarortay</h3>
-                            <p>Bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçasıdır. Kenarortayların kesim noktası <strong>Ağırlık Merkezi (G)</strong>'dir.</p>
-                            <p class="math-box">Ağırlık Merkezi Özelliği: Köşeye olan uzaklık, kenara olan uzaklığın 2 katıdır (2k'ya k kuralı).</p>
-
-                            <h3>3. Yükseklik</h3>
-                            <p>Bir köşeden karşı kenara inilen dikmedir. Diklik merkezi olarak adlandırılan noktada kesişirler.</p>
-                        </div>`;
-                    break;
-                case '1.3':
-                    content = `
-                        <h2>1.3 ÜÇGENDE ALAN</h2>
-                        <div class="content-card">
-                            <h3>Alan Formülleri</h3>
-                            <ul>
-                                <li><strong>Temel Alan:</strong> Taban x Yükseklik / 2</li>
-                                <li><strong>Dik Üçgen:</strong> Dik kenarların çarpımı / 2</li>
-                                <li><strong>Sinüslü Alan:</strong> İki kenar ve aradaki açının sinüsü biliniyorsa:</li>
-                            </ul>
-                            <p class="math-box">Alan = 1/2 . a . b . sin(C)</p>
-                            <p><strong>Heron Formülü:</strong> Kenarları a, b, c olan üçgenin çevresi 2u olsun. <br> Alan = √[u(u-a)(u-b)(u-c)]</p>
-                        </div>`;
-                    break;
-                case '1.4':
-                    content = `
-                        <h2>1.4 SİNÜS VE KOSİNÜS TEOREMLERİ</h2>
-                        <div class="content-card">
-                            <h3>Kosinüs Teoremi</h3>
-                            <p>Kenar uzunlukları bilinen bir üçgende açı bulmak veya iki kenar ve arasındaki açı biliniyorsa üçüncü kenarı bulmak için kullanılır.</p>
-                            <p class="math-box">a² = b² + c² - 2.b.c.cos(A)</p>
-                            
-                            <h3>Sinüs Teoremi</h3>
-                            <p>Bir üçgende kenar uzunlukları, karşılarındaki açıların sinüsleri ile doğru orantılıdır.</p>
-                            <p class="math-box">a / sin(A) = b / sin(B) = c / sin(C) = 2R (Çevrel Çember Çapı)</p>
-                        </div>`;
-                    break;
-                
-                case '2.1':
-                    content = `
-                        <h2>2.1 İKİ KATEGORİK DEĞİŞKEN</h2>
-                        <div class="content-card">
-                             
-
-
-                            <h3>Çapraz Tablolar (Sıklık Tabloları)</h3>
-                            <p>İki farklı kategorik değişkenin (Örn: Göz Rengi ve Saç Rengi) ilişkisini incelemek için kullanılır. </p>
-                            <ul>
-                                <li><strong>Marjinal Sıklık:</strong> Satır veya sütun toplamlarıdır.</li>
-                                <li><strong>Koşullu Sıklık:</strong> Belirli bir şart altındaki oranlardır (Örn: Sadece erkekler arasındaki mavi gözlü oranı).</li>
-                            </ul>
-                        </div>
-                         <div class="content-card">
-                            <h3>Simpson Paradoksu</h3>
-                            <p>Farklı gruplarda görülen bir eğilimin, gruplar birleştirildiğinde tersine dönmesi durumudur. Bu, veriyi yanlış yorumlamanın tehlikelerini gösterir.</p>
-                        </div>
-                    `;
-                    break;
-                case '2.2':
-                    content = `
-                        <h2>2.2 VERİ ANALİZİ VE YORUMLAMA</h2>
-                        <div class="content-card">
-                            <h3>Veri Kaynakları ve Güvenilirlik</h3>
-                            <p>TÜİK gibi resmi kurumlardan alınan veriler ile sosyal medyadaki veriler arasındaki farkları ayırt etmek önemlidir. </p>
-                            <ul>
-                                <li>Veri nasıl toplandı? (Anket, gözlem, deney)</li>
-                                <li>Örneklem grubu tüm kitleyi temsil ediyor mu?</li>
-                                <li>Yanlılık (Bias) var mı?</li>
-                            </ul>
-                        </div>`;
-                    break;
-                
-                case '3.1':
-                    content = `
-                        <h2>3.1 ASAL SAYILAR VE ÇARPANLARA AYIRMA</h2>
-                        <div class="content-card">
-                            
-
-                            <h3>Asal Sayı Nedir?</h3>
-                            <p>1 ve kendisinden başka pozitif tam sayı böleni olmayan, 1'den büyük doğal sayılara denir. (2, 3, 5, 7, 11...)</p>
-                            <p><strong>Önemli Not:</strong> 2 çift olan tek asal sayıdır.</p>
-                            
-                            <h3>Aritmetiğin Temel Teoremi</h3>
-                            <p>1'den büyük her doğal sayı, asal sayıların çarpımı şeklinde tek bir biçimde yazılabilir. Buna <strong>Asal Çarpanlara Ayırma</strong> denir.</p>
-                            <p class="math-box">Örnek: 72 = 2³ x 3²</p>
-                        </div>
-
-                        <h3>⚡ 1 Neden Asal Değildir?</h3>
-                        <p>Asal sayı tanımı gereği "Sadece iki farklı pozitif böleni olan" sayılardır (1 ve kendisi). 1 sayısının sadece 1 tane böleni vardır. Ayrıca 1 asal kabul edilseydi, asal çarpanlara ayırmanın "tekliği" (benzersizliği) bozulurdu.</p>
-                    `;
-                    break;
-                case '3.2':
-                    content = `
-                        <h2>3.2 EBOB - EKOK</h2>
-                        <div class="content-card">
-                            <h3>En Büyük Ortak Bölen (EBOB)</h3>
-                            <p>İki veya daha fazla sayıyı aynı anda bölebilen en büyük sayıdır. Asal çarpanlardan <strong>ortak olanların en küçük üsleri</strong> alınarak bulunur.</p>
-                            
-                            <h3>En Küçük Ortak Kat (EKOK)</h3>
-                            <p>İki veya daha fazla sayının ortak katlarının en küçüğüdür. Asal çarpanlardan <strong>ortak olanların en büyük üsleri ve ortak olmayanların tamamı</strong> alınarak bulunur.</p>
-                            
-                            <p class="math-box">Kural: A x B = EBOB(A,B) x EKOK(A,B)</p>
-                        </div>`;
-                    break;
-                case '3.3':
-                    content = `
-                        <h2>3.3 BÖLÜNEBİLME KURALLARI</h2>
-                        <div class="content-card">
-                            <h3>Pratik Kurallar</h3>
-                            <ul>
-                                <li><strong>2 ile:</strong> Son basamak çift (0,2,4,6,8).</li>
-                                <li><strong>3 ile:</strong> Rakamlar toplamı 3'ün katı.</li>
-                                <li><strong>4 ile:</strong> Son iki basamak 4'ün katı veya 00.</li>
-                                <li><strong>5 ile:</strong> Son basamak 0 veya 5.</li>
-                                <li><strong>9 ile:</strong> Rakamlar toplamı 9'un katı.</li>
-                                <li><strong>10 ile:</strong> Son basamak 0.</li>
-                                <li><strong>11 ile:</strong> Sağdan sola +, -, +, - işaretlenip toplanır. Sonuç 11'in katı olmalıdır.</li>
-                            </ul>
-                        </div>`;
-                    break;
-
-                default:
-                    content = '<div class="placeholder"><h2>Konu Seçilmedi</h2><p>Lütfen yukarıdaki konulardan birine tıklayarak detaylı anlatımı görüntüleyin.</p></div>';
-            }
-            
-            detailArea.innerHTML = content;
-            if (window.MathJax) {
-                MathJax.typesetPromise();
-            }
-            window.location.hash = '#icerik-alani';
-        }
-
         function analyzeNumber() {
-            const numInput = document.getElementById('numberInput').value;
-            const num = parseInt(numInput);
-            const resultDiv = document.getElementById('result');
-            const factorDiv = document.getElementById('factor-result');
+            const inputVal = document.getElementById('numInput').value;
+            const num = parseInt(inputVal);
+            const box = document.getElementById('result-box');
             
-            resultDiv.innerHTML = "";
-            resultDiv.className = "";
-            factorDiv.innerHTML = "";
-
-            if (isNaN(num)) {
-                resultDiv.innerText = "Lütfen geçerli bir sayı girin.";
-                return;
-            }
-            if (num < 1) {
-                resultDiv.innerText = "Lütfen pozitif bir tam sayı girin.";
-                return;
-            }
-            if (num === 1) {
-                resultDiv.innerHTML = "❌ 1 Sayısı ASAL DEĞİLDİR.<br><small>1 ne asaldır ne de bileşik sayıdır.</small>";
-                resultDiv.className = "special";
-                factorDiv.innerHTML = "Çarpanlar: 1 = 1";
+            if (inputVal === "" || isNaN(num) || num < 1) {
+                alert("Lütfen pozitif bir tam sayı giriniz.");
                 return;
             }
 
+            box.style.display = "block";
+            
             let isPrime = true;
-            for (let i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i === 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-
-            if (isPrime) {
-                resultDiv.innerHTML = "✅ " + num + " bir ASAL SAYIDIR.";
-                resultDiv.className = "valid";
-            } else {
-                resultDiv.innerHTML = "⛔ " + num + " bir ASAL SAYI DEĞİLDİR (Bileşik Sayı).";
-                resultDiv.className = "invalid";
-            }
-
-            let tempNum = num;
-            let factors = {};
-            let divisor = 2;
-
-            while (tempNum >= 2) {
-                if (tempNum % divisor === 0) {
-                    if (factors[divisor]) {
-                        factors[divisor]++;
-                    } else {
-                        factors[divisor] = 1;
+            if (num === 1) isPrime = false;
+            else if (num > 1) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
                     }
-                    tempNum = tempNum / divisor;
-                } else {
-                    divisor++;
                 }
             }
 
-            let factorString = "";
-            let keys = Object.keys(factors);
-            
-            for (let i = 0; i < keys.length; i++) {
-                let base = keys[i];
-                let exponent = factors[base];
-                
-                factorString += base + "<sup>" + exponent + "</sup>";
-                
-                if (i < keys.length - 1) {
-                    factorString += " x ";
-                }
+            let headerBg = isPrime ? "rgba(34, 197, 94, 0.2)" : "rgba(239, 68, 68, 0.2)";
+            let borderColor = isPrime ? "#22c55e" : "#ef4444";
+            let icon = isPrime ? "✅" : "❌";
+            let text = isPrime ? "Asal Sayı" : "Asal Değil";
+            let subText = isPrime ? `${num} asal bir sayıdır.` : `${num} asal değildir.`;
+
+            if (num === 1) {
+                subText = "1 asal değildir çünkü sadece 1 tane böleni vardır.";
             }
 
-            factorDiv.innerHTML = num + " = " + factorString;
+            box.style.backgroundColor = headerBg;
+            box.style.borderColor = borderColor;
+
+            let headerHTML = `
+                <div class="result-header" style="color: ${borderColor}">
+                    <span style="font-size: 2rem; display:block; margin-bottom:5px;">${icon}</span>
+                    ${text}
+                    <div style="font-size: 1rem; color: #e2e8f0; font-weight:400; margin-top:5px;">${subText}</div>
+                </div>
+            `;
+
+            let divisors = [];
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) divisors.push(i);
+            }
+
+            let factorizationStr = "";
+            if (num === 1) {
+                factorizationStr = "Yoktur";
+            } else if (isPrime) {
+                factorizationStr = `${num}<sup>1</sup>`;
+            } else {
+                let tempNum = num;
+                let factors = {};
+                
+                for (let i = 2; i * i <= tempNum; i++) {
+                    while (tempNum % i === 0) {
+                        factors[i] = (factors[i] || 0) + 1;
+                        tempNum /= i;
+                    }
+                }
+                if (tempNum > 1) {
+                    factors[tempNum] = (factors[tempNum] || 0) + 1;
+                }
+
+                let parts = [];
+                for (let base in factors) {
+                    parts.push(`${base}<sup>${factors[base]}</sup>`);
+                }
+                factorizationStr = `${num} = ` + parts.join(" × ");
+            }
+
+            box.innerHTML = `
+                ${headerHTML}
+                <div class="result-content">
+                    <div class="data-item">
+                        <span class="data-label">Tüm Bölenleri:</span>
+                        <span class="data-value">${divisors.join(", ")}</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Asal Çarpanlara Ayırma:</span>
+                        <span class="data-value">${factorizationStr}</span>
+                    </div>
+                </div>
+            `;
         }
     </script>
 
 </body>
 </html>
-
-
